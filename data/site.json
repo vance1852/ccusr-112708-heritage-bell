@@ -1,0 +1,82 @@
+{
+  "zones": {
+    "square": [
+      "n1",
+      "n2"
+    ],
+    "bridge": [
+      "n3"
+    ],
+    "homes": [
+      "n2"
+    ]
+  },
+  "sources": {
+    "n1": {
+      "role": "low",
+      "holdover_ms_per_s": 3
+    },
+    "n2": {
+      "role": "high",
+      "holdover_ms_per_s": 7
+    },
+    "n3": {
+      "role": "cue",
+      "holdover_ms_per_s": 2
+    }
+  },
+  "programs": {
+    "full": {
+      "parts": [
+        "low",
+        "high"
+      ],
+      "duration_s": 18,
+      "tolerance_ms": 65,
+      "cut_points_s": [
+        6,
+        12
+      ],
+      "fallback": "solo"
+    },
+    "solo": {
+      "parts": [
+        "low"
+      ],
+      "duration_s": 10,
+      "tolerance_ms": 80,
+      "cut_points_s": [
+        5
+      ]
+    },
+    "cue": {
+      "parts": [
+        "cue"
+      ],
+      "duration_s": 3,
+      "tolerance_ms": 70,
+      "cut_points_s": [
+        3
+      ]
+    }
+  },
+  "quiet": {
+    "homes": [
+      [
+        112,
+        180
+      ]
+    ]
+  },
+  "wire_fields": {
+    "clock": "代次 偏差 误差上界",
+    "book": "场次 节目 起始秒",
+    "queued": "场次 版本 代次",
+    "playing": "场次 版本 代次",
+    "stop_seen": "场次 版本",
+    "stopped": "场次 版本 原因",
+    "quiet": "区段 起秒 止秒",
+    "link": "连接态",
+    "ask": "场次"
+  }
+}
